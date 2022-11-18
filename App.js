@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import firebase from "@react-native-firebase/app";
 import { PermissionsAndroid } from "react-native";
+import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import Providers from "./src/navigation";
 
 const App = () => {
@@ -32,7 +33,16 @@ const App = () => {
         androidPermissions();
     }, []);
 
-    return <Providers />;
+    return (
+        <SafeAreaProvider>
+            <SafeAreaView
+                edges={["top"]}
+                style={{ flex: 1, height: "100%", width: "100%" }}
+            >
+                <Providers />
+            </SafeAreaView>
+        </SafeAreaProvider>
+    );
 };
 
 export default App;

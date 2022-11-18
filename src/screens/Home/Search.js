@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
         padding: 10,
         height: '100%',
         flex: 1,
-        backgroundColor: 'black'
+        backgroundColor: 'white'
     },
 
     textInput: {
